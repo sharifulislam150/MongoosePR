@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8ffae 0%, #43c6ac 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .message-form {
+            background: #fff;
+            padding: 2rem 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(67, 198, 172, 0.15);
+            width: 350px;
+        }
+        .message-form h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #43c6ac;
+            font-weight: 600;
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #43c6ac;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #f8ffae;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #43c6ac;
+            outline: none;
+        }
+        .message-form button {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(90deg, #43c6ac 0%, #f8ffae 100%);
+            color: #333;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .message-form button:hover {
+            background: linear-gradient(90deg, #f8ffae 0%, #43c6ac 100%);
+        }
+    </style>
+    <form class="message-form" method="POST" action="/chats">
+        <h2>Send a New Message</h2>
+        <div class="form-group">
+            <label for="from">From</label>
+            <input type="text" id="from" name="from" required>
+        </div>
+        <div class="form-group">
+            <label for="to">To</label>
+            <input type="text" id="to" name="to" required>
+        </div>
+        <div class="form-group">
+            <label for="msg">Message</label>
+            <textarea id="msg" name="msg" rows="4" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+    </form>
+</body>
+</html>

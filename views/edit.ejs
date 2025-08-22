@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Message</title>
+</head>
+<body>
+    <div class="edit-container">
+        <h3>Edit Chat</h3>
+        <p class="chat-info">
+            Editing chat ID: <span><%= chat._id %></span><br>
+            Sent from <strong><%= chat.from %></strong> to <strong><%= chat.to %></strong>
+        </p>
+
+        <form action="/chats/<%= chat._id %>?_method=PUT" method="POST" class="edit-form">
+            <label for="from">From:</label>
+            <input type="text" id="from" name="from" value="<%= chat.from %>" readonly>
+
+            <label for="to">To:</label>
+            <input type="text" id="to" name="to" value="<%= chat.to %>" readonly>
+
+            <label for="msg">Message:</label>
+            <textarea id="msg" name="msg" rows="5" required><%= chat.msg %></textarea>
+
+            <div class="form-actions">
+                <button type="submit" class="save-btn">💾 Save Changes</button>
+                <a href="/chats" class="cancel-btn">✖ Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+<style>
+/* ===== Container ===== */
+.edit-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ===== Heading ===== */
+.edit-container h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #2d3a4b;
+    text-align: center;
+    position: relative;
+}
+.edit-container h3::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #4f8cff;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ===== Chat Info ===== */
+.chat-info {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.chat-info span {
+    color: #4f8cff;
+    font-weight: 600;
+}
+
+/* ===== Form ===== */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+}
+.edit-form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #2d3a4b;
+}
+.edit-form input,
+.edit-form textarea {
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-bottom: 18px;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+.edit-form input:focus,
+.edit-form textarea:focus {
+    border: 1px solid #4f8cff;
+    outline: none;
+    box-shadow: 0 0 6px rgba(79, 140, 255, 0.3);
+}
+
+/* ===== Buttons ===== */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.save-btn,
+.cancel-btn {
+    padding: 12px 28px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.save-btn {
+    background: linear-gradient(135deg, #4f8cff, #2d3a4b);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(44, 62, 80, 0.15);
+}
+.save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(44, 62, 80, 0.25);
+}
+.cancel-btn {
+    background: #f0f0f0;
+    color: #444;
+    display: inline-block;
+    text-align: center;
+}
+.cancel-btn:hover {
+    background: #ddd;
+    color: #000;
+}
+</style> 
+</html>
