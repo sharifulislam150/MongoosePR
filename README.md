@@ -9,13 +9,8 @@ A practice project for learning **Mongoose** with **Express.js** - Building REST
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Project Structure](#project-structure)
-- [Environment Variables](#environment-variables)
-- [Scripts](#scripts)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## 🎯 About
 
