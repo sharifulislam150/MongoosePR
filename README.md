@@ -1,4 +1,4 @@
-# MongoosePR
+# Mongoose Project
 
 A practice project for learning **Mongoose** with **Express.js** - Building RESTful APIs with MongoDB integration.
 
