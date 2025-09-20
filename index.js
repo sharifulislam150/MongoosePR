@@ -23,8 +23,9 @@ async function main() {
   await mongoose.connect("mongodb://127.0.0.1:27017/whatsapp");
 }
 
+//main route
 app.get("/", (req, res) => {
-  res.send("working");
+  res.render("main.ejs");
 });
 
 //Index route
